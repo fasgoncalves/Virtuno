@@ -1,0 +1,12 @@
+[Unit]
+Description=Virtuno - Web VM Manager Service
+After=network.target
+
+[Service]
+User=admin
+WorkingDirectory=/opt/Virtuno
+ExecStart=/opt/Virtuno/venv/bin/python main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

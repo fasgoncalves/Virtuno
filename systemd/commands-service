@@ -1,0 +1,5 @@
+#
+sudo systemctl daemon-reload
+sudo systemctl enable virtuno
+sudo systemctl start virtuno
+sudo systemctl status virtuno
