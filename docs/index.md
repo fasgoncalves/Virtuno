@@ -1,15 +1,12 @@
-# Virtuno – KVM Virtual Machine Manager
+# 🌐 Virtuno – Web-based Virtual Machine Manager
 
-Welcome to the official project page for **Virtuno**, a modern web-based interface for managing KVM virtual machines.
+Welcome to **Virtuno**, a modern, intuitive, and powerful KVM management interface with web-based terminal access.
 
-## 🚀 Features
-- Start / Stop / Reboot / Shutdown VMs
-- Web terminal with ttyd integration
-- Dynamic proxy support
-- Dashboard & monitoring
-- Mobile-friendly
-- AI-powered prediction (planned)
+...
+
+## ☕ Support the Project
 
 
-
-📦 GitHub: [Virtuno Repository](https://github.com/fasgoncalves/virtuno)
+<a href="https://www.buymeacoffee.com/fasgoncalves" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="45" alt="Buy Me a Coffee">
+</a>
