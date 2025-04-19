@@ -1,0 +1,3 @@
+nicegui>=1.3.10
+psutil>=5.9.0
+sshpass; sys_platform == 'linux'
