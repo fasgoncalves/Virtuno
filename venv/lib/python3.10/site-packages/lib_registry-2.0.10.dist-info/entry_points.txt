@@ -1,0 +1,2 @@
+[console_scripts]
+lib_registry = lib_registry.lib_registry_cli:cli_main

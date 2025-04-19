@@ -1,0 +1,8 @@
+[2025-04-09 21:47:05] Error creating VM Teste-Ab: Command '['qemu-img', 'create', '-f', 'qcow2', '/var/lib/libvirt/images/Teste-Ab.qcow2', '20G']' returned non-zero exit status 1.
+[2025-04-09 21:51:24] Error creating VM testes-ab: Command '['qemu-img', 'create', '-f', 'qcow2', '/var/lib/libvirt/images/testes-ab.qcow2', '20G']' returned non-zero exit status 1.
+[2025-04-09 21:55:30] Error creating VM testes-ab: Command '['qemu-img', 'create', '-f', 'qcow2', '/var/lib/libvirt/images/testes-ab.qcow2', '20G']' returned non-zero exit status 1.
+[2025-04-09 21:56:10] Error creating VM testes-Ab: Command '['qemu-img', 'create', '-f', 'qcow2', '/var/lib/libvirt/images/testes-Ab.qcow2', '20G']' returned non-zero exit status 1.
+[2025-04-09 22:04:23] Error creating VM testes-Ab: Command '['qemu-img', 'create', '-f', 'qcow2', '/var/lib/libvirt/images/testes-Ab.qcow2', '20G']' returned non-zero exit status 1.
+[2025-04-09 22:06:29] Error creating VM testes: Command '['qemu-img', 'create', '-f', 'qcow2', '/var/lib/libvirt/images/testes.qcow2', '20G']' returned non-zero exit status 1.
+[2025-04-09 22:10:07] Created VM testes with ISO ubuntu-24.04-live-server-amd64.iso
+[2025-04-09 22:14:11] Created VM hello with ISO ubuntu-24.04-live-server-amd64.iso

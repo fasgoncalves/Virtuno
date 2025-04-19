@@ -1,0 +1,123 @@
+# KVM Manager - Voltaire Edition
+
+KVM Manager is a powerful and elegant web-based management interface for KVM virtual machines, developed using Python and NiceGUI. It enables full control of virtual infrastructure with advanced features for real-time monitoring, predictive analysis, user authentication, remote consoles, and system automation.
+
+---
+
+## 🔧 Features
+
+- ✅ **Dashboard with Traffic Light Status** (Green: Running, Yellow: Issue, Red: Stopped)
+- 🔺 **Start, Stop, Reboot, Shutdown** controls for each VM
+- 🌐 **Remote Console Access** via SPICE or noVNC
+- ⚙️ **VM Editing Module** (name, CPU, RAM, ISO, Autostart, Boot Options)
+- ➕ **Create VM Wizard** with ISO picker and full config
+- ⏲️ **Clone & Backup with Live Progress Bar**
+- 📊 **Real-time CPU, Memory, Network Monitoring**
+- 🤖 **Predictive AI Analysis** on usage patterns
+- 🔑 **User Login with Session Control**
+- 🔎 **Logging of Actions for Audit Trail**
+- 🚜 **System Service Integration with AppArmor**
+
+---
+
+## 📦 Installation
+
+### Requirements:
+- Ubuntu 22.04+
+- KVM + libvirt
+- Python 3.10+
+- `pip`, `venv`, `qemu-img`, `virsh`
+- `remote-viewer` or `novnc`
+
+### Setup:
+```bash
+sudo apt update && sudo apt install -y qemu-kvm libvirt-daemon-system virtinst bridge-utils net-tools \
+  python3 python3-pip python3-venv virt-viewer novnc lynx netcat
+
+# Clone repo
+cd /opt
+sudo git clone https://github.com/youruser/kvm-manager.git
+cd kvm-manager
+sudo python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Create Admin User:
+```bash
+python3 encode-pass.py  # use this to generate a hashed password
+```
+Then add it to the users database (JSON or SQLite, as configured).
+
+---
+
+## 🚀 Running the App
+
+```bash
+source venv/bin/activate
+python3 main.py
+```
+Visit `http://localhost:2000` or `http://<your-ip>:2000`.
+
+---
+
+## ⚖️ Running as a Service
+
+A `.deb` package is provided for deployment. Alternatively:
+
+```bash
+sudo cp kvm-manager.service /etc/systemd/system/
+sudo systemctl daemon-reexec
+sudo systemctl enable --now kvm-manager
+```
+
+---
+
+## 📊 Project Structure
+
+```
+kvm-manager/
+├── main.py               # Entry point
+├── monitor.py            # Realtime monitoring
+├── predictor.py          # AI predictions
+├── editar_vm.py          # VM editing module
+├── criar_vm.py           # Create VM module
+├── vm_control.py         # VM control functions
+├── login.py              # Login system
+├── utils.py              # Helpers & logging
+├── static/               # Assets (JS, CSS)
+├── templates/            # Custom HTML views
+├── scripts/launch_vnc.sh # SPICE/noVNC launcher
+└── venv/                 # Virtualenv
+```
+
+---
+
+## 🌐 About
+
+Developed by Francisco Gonçalves and Augustus, the AI companion.
+For demos, contact: [francis.goncalves@gmail.com](mailto:francis.goncalves@gmail.com)
+
+Visit: [https://www.softelabs.pt](https://www.softelabs.pt)
+
+---
+
+## 📈 License
+
+MIT License — Free to use, modify, and distribute with attribution.
+
+---
+
+## 🌟 Future Roadmap
+
+- [ ] Role-based Access Control
+- [ ] Support for Clusters
+- [ ] VM Snapshots
+- [ ] Mobile Responsive Enhancements
+- [ ] Remote ISO Uploads
+
+---
+
+> "KVM Manager brings elegance and power to your virtualization infrastructure."
+
+

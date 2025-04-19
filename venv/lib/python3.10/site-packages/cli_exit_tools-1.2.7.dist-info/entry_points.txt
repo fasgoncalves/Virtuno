@@ -1,0 +1,2 @@
+[console_scripts]
+cli_exit_tools = cli_exit_tools.cli_exit_tools_cli:cli_main

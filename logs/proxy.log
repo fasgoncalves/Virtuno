@@ -1,0 +1,19 @@
+[2025-04-18 11:38:49,835] 🚀 Proxy ativo na porta 8023 → redireciona para porta 8022
+[2025-04-18 11:43:04,351] ⚠️ Erro ao redirecionar: [Errno 111] Connect call failed ('192.168.10.180', 8022)
+[2025-04-18 11:44:18,538] ⚠️ Erro ao redirecionar: [Errno 111] Connect call failed ('192.168.10.180', 8022)
+[2025-04-18 11:44:20,501] ⚠️ Erro ao redirecionar: [Errno 111] Connect call failed ('192.168.10.180', 8022)
+[2025-04-18 12:07:41,628] 🚀 Proxy ativo na porta 8022 → redireciona para IP remoto na mesma porta 8022
+[2025-04-18 12:35:00,266] Redirecionando ligação para 192.168.10.97:8022
+[2025-04-18 12:36:30,640] Redirecionando ligação para 192.168.10.97:8022
+[2025-04-18 12:36:30,652] Redirecionando ligação para 192.168.10.97:8022
+[2025-04-18 12:36:40,736] Redirecionando ligação para 192.168.10.97:8022
+[2025-04-18 12:37:15,572] ❌ Erro: [Errno 110] Connect call failed ('192.168.10.97', 8022)
+[2025-04-18 12:38:45,684] ❌ Erro: [Errno 110] Connect call failed ('192.168.10.97', 8022)
+[2025-04-18 12:38:45,685] ❌ Erro: [Errno 110] Connect call failed ('192.168.10.97', 8022)
+[2025-04-18 12:38:53,876] ❌ Erro: [Errno 110] Connect call failed ('192.168.10.97', 8022)
+[2025-04-18 12:40:18,708] 🚀 Proxy ativo na porta 8023 → redireciona para IP remoto na mesma porta 8022
+[2025-04-18 12:49:41,077] 🚀 Proxy ativo na porta 8023 → redireciona para IP remoto na mesma porta 8022
+[2025-04-18 12:54:23,102] 🚀 Proxy ativo na porta 8023 → redireciona para IP remoto na mesma porta 8022
+[2025-04-18 13:22:24,253] 🚀 Proxy ativo na porta 8023 → redireciona para IP remoto na mesma porta 8022
+[2025-04-18 13:24:13,255] 🚀 Proxy ativo na porta 8023 → redireciona para IP remoto na mesma porta 8022
+[2025-04-18 13:24:23,931] 🚀 Proxy ativo na porta 8023 → redireciona para IP remoto na mesma porta 8022

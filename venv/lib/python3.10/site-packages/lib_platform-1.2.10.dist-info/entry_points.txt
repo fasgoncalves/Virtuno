@@ -1,0 +1,2 @@
+[console_scripts]
+lib_platform = lib_platform.lib_platform_cli:cli_main
