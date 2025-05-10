@@ -13,6 +13,11 @@ from xml.etree import ElementTree as ET
 import threading
 import time
 #
+from starlette.requests import Request
+from nicegui import ui
+import requests
+import config
+#
 gl_device = False
 #
 async def detect_Mobile():
@@ -92,7 +97,7 @@ def start_console(vm_name):
     async def detect_Mobile():
       gl_device = await ui.run_javascript('/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);')
       print(" Is Device : " + str(gl_device))
-    if gl_device:
+    if gl_device or not config.tipo_IP:
         pagina_iniciar_console(vm_name)
     else:
         open_console_vm(vm_name)
@@ -104,7 +109,7 @@ def exec_console(vm):
             #resultado = subprocess.check_output(["/opt/kvm-manager/scripts/browser_console.sh", vm], stderr=subprocess.STDOUT)
             #output = resultado.decode().strip()
             resultado =subprocess.Popen(
-              ['bash', '/opt/kvm-manager/scripts/browser_console.sh &', vm],
+              ['bash', '/opt/Virtuno/scripts/browser_console.sh &', vm],
               stdin=subprocess.DEVNULL,
               stdout=subprocess.DEVNULL,
               stderr=subprocess.DEVNULL
@@ -198,6 +203,7 @@ def clone_vm(source_name, new_name, progress_bar):
         return f'Error on cloning VM: {e}'
 
 def open_console_vm(nome_vm):
+  try:
     print (" VM = " + nome_vm)
     if not vm_esta_ativa(nome_vm):
             print(f"⚠️ A VM '{nome_vm}' não está ativa.")
@@ -229,19 +235,27 @@ def open_console_vm(nome_vm):
                 env["NO_AT_BRIDGE"] = "1"
                 env["DISPLAY"] = os.environ.get("DISPLAY", ":1")
                 url = f"spice://localhost:{port}"
+                print ("sudo -u root remote-viwer " + url )
                 print(f"[DEBUG] Lançando remote-viewer com URL: {url}")
+                #["sudo", "-u", "root", "remote-viewer", url],
+                #["/usr/bin/remote-viewer", url],
+                #["/usr/bin/virt-viewer", nome_vm],
+                print ("Porta Spice " + str(port))
                 subprocess.Popen(
-                ["sudo", "-u", "admin", "remote-viewer", url],
+                ['/opt/Virtuno/scripts/launch_spice.sh', str(port)],
                  env=env,
                  stdout=subprocess.DEVNULL,
                  stderr=subprocess.DEVNULL
                 )
                 ui.notify(f'🖥️  A abrir remote-viewer para {nome_vm}...', type='positive')
+
             except Exception as e:
                 ui.notify(f'⚠️ Erro ao abrir remote-viewer: {e}', type='warning')
         else:
             ui.download(caminho_vv, filename=f'{nome_vm}.vv')
             ui.notify(f'💾 Ficheiro {nome_vm}.vv disponível para download.', type='info')
+  except Exception as e:
+        print(f"❌ Erro acesso remoto MAC da VM {vm_name}: {e}")
 #
 def obter_spice_porta(nome_vm):
     try:
@@ -313,7 +327,8 @@ def obter_mac_da_vm(vm_name):
 
 def obter_ip_pelo_mac(mac_address):
     try:
-        result = subprocess.check_output(['arp', '-e'], text=True)
+        #result = subprocess.check_output(['arp', '-e'], text=True)
+        result = subprocess.check_output(['cat', '/proc/net/arp'], text=True)
         for line in result.splitlines():
             if mac_address.lower() in line.lower():
                 return line.split()[0]
@@ -332,10 +347,13 @@ def iniciar_ttyd_na_vm(vm_name):
     print(f"🔍 MAC address da VM: {mac}")
 
     ip = obter_ip_pelo_mac(mac)
+    pathProxy="/opt/Virtuno/current_vm_ip.txt"
     if not ip:
         print(f"❌ IP não encontrado para o MAC {mac}. A VM pode não ter enviado tráfego.")
         return
 
+    with open(pathProxy, "w") as f:
+        f.write(ip)
     print(f"📡 IP da VM '{vm_name}': {ip}")
     porta_ttyd = 8022
     print(f"🚀 A iniciar ttyd na VM {vm_name} ({ip}) na porta {porta_ttyd}...")
@@ -343,9 +361,8 @@ def iniciar_ttyd_na_vm(vm_name):
     try:
         subprocess.Popen(
             [
-                'sshpass', '-p', 'userpassword',
-                'ssh', '-X', '-o', 'StrictHostKeyChecking=no',
-                f'user@{ip}',
+                'sshpass', '-p', 'triAmd-25wk1',
+                'ssh', f'fgoncalves@{ip}', '-X',
                 f'ttyd --writable --once -p {porta_ttyd} /bin/bash --login'
             ],
             stdin=subprocess.DEVNULL,
@@ -367,7 +384,7 @@ def pagina_iniciar_console(vm):
     def iniciar():
         threading.Thread(target=iniciar_ttyd_na_vm, args=(vm,), daemon=True).start()
         time.sleep(3)
-        ui.run_javascript("window.open('http://remote.fragmentoscaos.eu', '_blank')")
+        ui.run_javascript("window.open('http://mgr.fragmentoscaos.eu', '_blank')")
 
     ui.button('Lançar Consola VM', on_click=iniciar)
 #

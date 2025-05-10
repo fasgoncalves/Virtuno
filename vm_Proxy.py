@@ -1,7 +1,7 @@
 import asyncio
 
 PROXY_PORT = 8022
-IP_FILE = '/opt/kvm-manager/current_vm_ip.txt'
+IP_FILE = '/opt/Virtuno/current_vm_ip.txt'
 
 async def handle_connection(reader, writer):
     try:

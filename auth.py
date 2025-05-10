@@ -9,8 +9,8 @@ def check_credentials(username, password):
     try:
         conn = mysql.connector.connect(
             host='localhost',
-            user='iserdb',
-            password='userpass',
+            user='root',
+            password='yakarais',
             database='kvm_manager'
         )
         cursor = conn.cursor()

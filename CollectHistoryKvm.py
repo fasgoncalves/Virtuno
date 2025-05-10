@@ -10,8 +10,8 @@ def get_connection():
 def get_db():
     return mysql.connector.connect(
         host='localhost',
-        user='userdb',
-        password='userpass',
+        user='root',
+        password='yakarais',
         database='kvm_manager'
     )
 

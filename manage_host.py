@@ -293,7 +293,7 @@ def monitor_page():
     # **Header com Botão de Logout**
     with ui.row().classes("w-full justify-between items-center bg-gray-200 p-3 shadow-md text-blue"):
         with ui.row().classes('items-center justify-between w-full p-2'):
-           ui.label("📊 Virtuso - KVM HOST MONITOR").classes("text-lg font-bold")
+           ui.label("📊 Virtuno - KVM HOST MONITOR").classes("text-lg font-bold")
            ui.button('Return to Dashboard', on_click=lambda: ui.navigate.to('/')).props('outline')
 
     ui.label(f'Memória utilizada: {obter_uso_memoria()} MB').classes("text-md font-bold mt-4 text-center")

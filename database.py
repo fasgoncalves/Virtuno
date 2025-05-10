@@ -5,8 +5,8 @@ from datetime import datetime
 def get_connection():
     return mysql.connector.connect(
         host='localhost',
-        user='userdb',
-        password='passdb',
+        user='root',
+        password='yakarais',
         database='kvm_manager'
     )
 
