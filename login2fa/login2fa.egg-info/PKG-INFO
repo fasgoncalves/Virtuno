@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: login2fa
+Version: 6.3.0
+Summary: Sistema seguro de autenticação 2FA com logging e bloqueio configuráveis.
+Author: Francisco Gonçalves
+Requires-Dist: nicegui
+Requires-Dist: mysql-connector-python
+Requires-Dist: bcrypt
+Requires-Dist: requests
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary

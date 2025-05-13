@@ -1,0 +1,11 @@
+
+
+
+list Snapshots :
+
+virsh snapshot-list  Wordpress-Fgon-Ab
+
+
+Remove SnapShots
+
+virsh snapshot-delete  Wordpress-Fgon-Ab nome-snapshot

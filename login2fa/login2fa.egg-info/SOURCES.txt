@@ -1,0 +1,7 @@
+README.md
+setup.py
+login2fa.egg-info/PKG-INFO
+login2fa.egg-info/SOURCES.txt
+login2fa.egg-info/dependency_links.txt
+login2fa.egg-info/requires.txt
+login2fa.egg-info/top_level.txt
