@@ -48,13 +48,13 @@ configurar_login_2fa({
     'db': {
         'host': 'localhost',
         'user': 'root',
-        'password': 'yakarais',
+        'password': 'passwdDb',
         'database': 'authusers'
     },
     'ntfy': {
-        'url': 'http://192.168.10.32:9000',
-        'user': 'fgoncalves',
-        'pass': 'vu#Al1'
+        'url': 'ntfy-server.com',
+        'user': 'username',
+        'pass': 'passwd'
     },
     'rota_sucesso': '/mainPanel',
     'titulo_login': 'Acesso Seguro 2FA Virtuno V1.21',

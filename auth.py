@@ -10,8 +10,8 @@ def check_credentials(username, password):
         conn = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='yakarais',
-            database='kvm_manager'
+            password='passDb',
+            database='virtunoDb'
         )
         cursor = conn.cursor()
         cursor.execute("SELECT password FROM users WHERE username=%s", (username,))

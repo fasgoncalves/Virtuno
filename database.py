@@ -6,8 +6,8 @@ def get_connection():
     return mysql.connector.connect(
         host='localhost',
         user='root',
-        password='yakarais',
-        database='kvm_manager'
+        password='DbPass',
+        database='VirtunoDb'
     )
 
 def log_action(user, vm_name, action):

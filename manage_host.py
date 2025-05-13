@@ -24,9 +24,9 @@ def send_alarm():
     logging.info("Starting Message Sent to Mobile")
     TOPIC="Alertas"
     MESSAGE = "⚠️ Alerta : erro fatal " 
-    URL = f"http://localhost.pt:9000/{TOPIC}"
+    URL = f"http://ntfy_server/{TOPIC}"
     USER = "admin"
-    PASSWORD = "admin"
+    PASSWORD = "pass_admin"
 
     headers = {
     "Title": "Alerta de Seguranca",
@@ -131,9 +131,9 @@ def update_system_usage():
     cpuval = str(cpu_percent)
     #print ("data " + str(mem_percent) + " - " + str(cpu_percent))
     if  mem_percent > 75:
-        send_alarm_mobile("Alarme: A Memória do sistema Voltaire está ocupada a " + memval)
+        send_alarm_mobile("Alarme: A Memória do sistema XPTO está ocupada a " + memval)
     if  cpu_percent > 85:
-        send_alarm_mobile("Alarme: A Memória do sistema Voltaire está ocupada a " + cpuval)
+        send_alarm_mobile("Alarme: A Memória do sistema XPTO está ocupada a " + cpuval)
 #
 def get_iops():
     """Obtém IOPS apenas para /dev/sda3, /dev/sdb1, /dev/sdc1 e /dev/sdd1."""
