@@ -40,7 +40,7 @@ def encerrar_proxy():
 atexit.register(encerrar_proxy)
 #
 # Indicar o domínio público quando estiveres atrás de um proxy
-app.base_url = 'https://whats.softelabs.pt/'
+app.base_url = 'https://url-to-app.com/'
 tipo_IP = False
 #
 # Configuração do sistema de login 2FA
@@ -127,5 +127,5 @@ def page_main(request: Request):
 #
     start_dash()
 #
-ui.run(title='VIRTUNO v1.21 - Easy KVM Manager Software', port=2000, dark=True, storage_secret='segredo_voltaire_123')
+ui.run(title='VIRTUNO v1.21 - Easy KVM Manager Software', port=2000, dark=True, storage_secret='secret_pass')
 #
